@@ -344,7 +344,7 @@
 				  <div class="modal-body tasBackcol text-white">
 					<form >
 					<label >Title</label><br> 
-					<input class="form-control mt-1" type="text"><br>						<!--form-control : let the input bar take 100 of the width-->
+					<input id="titleId" class="form-control mt-1" type="text"><br>						<!--form-control : let the input bar take 100 of the width-->
 					<label class="mt-1">Type</label><br>
 					<div class="d-flex mt-2">
 						<div class="ms-4">
@@ -355,27 +355,31 @@
 						</div><br>
 					</div>
 					<label class="mt-2">Priorty</label><br>
-                    <select class=" mt-1 form-select ">										<!--form-select : to let the select bar take 100 of the width-->
-						<option class="fw-bold">Please select</option>
+                    <select id="prt" class=" mt-1 form-select ">										<!--form-select : to let the select bar take 100 of the width-->
+						<option class="fw-bold"
+						disabled selected>Please select</option>
                         <option class="fw-bold" value="high">High</option>
                         <option class="fw-bold" value="Medium">Medium</option>
                         <option class="fw-bold" value="Low">Low</option>
+						<option class="fw-bold" value="Critical">Critical</option>
                     </select><br>
 					<label class="mt-1">Status</label><br>
-                    <select class="form-select  mt-1">              
-						<option class="fw-bold">Please select</option>
-                        <option class="fw-bold" value="One">One</option>
-                        <option class="fw-bold" value="Tow">Tow</option>
+                    <select id="stt" class="form-select  mt-1">              
+						<option class="fw-bold" selected disabled>Please select</option>
+                        <option class="fw-bold" value="To Do">To Do</option>
+                        <option class="fw-bold" value="In Progress">In Progress</option>
+                        <option class="fw-bold" value="Done">Done</option>
                     </select><br>
 					<label class="mt-1">Date</label><br>
-                    <input class="form-control mt-1" type="date"><br>						
+                    <input id="date" class="form-control mt-1" type="date"><br>						
                     <label class="mt-1">Description</label><br>
-                    <textarea class="w-100 p-4 mt-1"></textarea>
+                    <textarea id="desc" class="w-100 p-4 mt-1"></textarea>
 				</form>
 				  </div>
 				  <div class="modal-footer tasBackcol border-top-0">
-					<button type="button" class="btn btn-white text-danger" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="btn btn-danger">Save</button>
+					<button type="button" class="btn btn-white text-danger" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+					<button type="button" class="btn btn-danger" id="saveBtn" data-bs-dismiss="modal"
+					onclick="addTasks()">Save</button>
 				  </div>
 				</div>
 			  </div>
@@ -385,6 +389,8 @@
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/app.js">	</script>
 	<!-- ================== END core-js ================== -->
 </body>
 
