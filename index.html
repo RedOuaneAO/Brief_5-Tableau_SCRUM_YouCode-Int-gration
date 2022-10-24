@@ -39,7 +39,7 @@
 				</div>
 
 				<div class="col-6 text-end mt-5 mb-5">
-					<button class="text-white boBackcolor2 rounded-pill border-0 p-2 px-3 " data-bs-toggle="modal" data-bs-target="#modal-task"><i
+					<button class="text-white boBackcolor2 rounded-pill border-0 p-2 px-3 " onclick="createTask()"><i
 							class="bi bi-plus-lg "></i> Add Task</button>
 				</div>
 			</div>
@@ -342,7 +342,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>    <!--data-bs-dismiss : to exit modal -->
 				  </div>
 				  <div class="modal-body tasBackcol text-white">
-					<form >
+					<form  id="formId">
 					<label >Title</label><br> 
 					<input id="titleId" class="form-control mt-1" type="text"><br>						<!--form-control : let the input bar take 100 of the width-->
 					<label class="mt-1">Type</label><br>
@@ -356,9 +356,8 @@
 					</div>
 					<label class="mt-2">Priorty</label><br>
                     <select id="prt" class=" mt-1 form-select ">										<!--form-select : to let the select bar take 100 of the width-->
-						<option class="fw-bold"
-						disabled selected>Please select</option>
-                        <option class="fw-bold" value="high">High</option>
+						<option class="fw-bold" disabled selected>Please select</option>
+                        <option class="fw-bold" value="High">High</option>
                         <option class="fw-bold" value="Medium">Medium</option>
                         <option class="fw-bold" value="Low">Low</option>
 						<option class="fw-bold" value="Critical">Critical</option>
@@ -377,9 +376,7 @@
 				</form>
 				  </div>
 				  <div class="modal-footer tasBackcol border-top-0">
-					<button type="button" class="btn btn-white text-danger" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-					<button type="button" class="btn btn-danger" id="saveBtn" data-bs-dismiss="modal"
-					onclick="addTasks()">Save</button>
+					
 				  </div>
 				</div>
 			  </div>
